@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A responsive, accessible movie discovery layout built with semantic HTML and Tailwind CSS.">
+  <title>ScreenShelf — Discover Movies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="border-b border-white/10 bg-slate-950/95">
+    <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+      <a href="#home" class="brand text-2xl font-bold tracking-tight" aria-label="ScreenShelf home">
+        <span class="text-emerald-400">Screen</span>Shelf<span class="text-emerald-400">.</span>
+      </a>
+      <nav aria-label="Main navigation" class="order-3 w-full sm:order-2 sm:w-auto">
+        <ul class="flex flex-wrap items-center gap-5 text-sm font-medium text-slate-300">
+          <li><a class="nav-link" href="#home">Home</a></li>
+          <li><a class="nav-link" href="#popular">Popular</a></li>
+          <li><a class="nav-link" href="#watchlist">Watchlist</a></li>
+        </ul>
+      </nav>
+      <form class="order-2 flex w-full max-w-sm sm:order-3 sm:w-auto" role="search" action="#popular" method="get">
+        <label class="sr-only" for="movie-search">Search movies</label>
+        <input id="movie-search" name="q" type="search" placeholder="Search movies…" class="min-w-0 flex-1 rounded-l-xl border border-white/15 bg-slate-900 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:z-10 focus:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-400" />
+        <button type="submit" aria-label="Search movies" class="rounded-r-xl bg-emerald-400 px-4 py-2 font-semibold text-slate-950 transition hover:bg-emerald-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300">Search</button>
+      </form>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="home" aria-labelledby="hero-title" class="hero-gradient">
+      <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1.2fr_.8fr] lg:px-8 lg:py-24">
+        <div>
+          <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-300/10 px-3 py-1 text-xs font-bold uppercase tracking-[.18em] text-emerald-300">
+            <span aria-hidden="true" class="h-2 w-2 rounded-full bg-emerald-300"></span>
+            Your next favourite film
+          </p>
+          <h1 id="hero-title" class="display-font max-w-3xl text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">Find a story worth <span class="text-emerald-300">staying up for.</span></h1>
+          <p class="mt-5 max-w-xl text-base leading-7 text-slate-300 sm:text-lg">Explore hand-picked movies, discover something new, and build a watchlist for your next movie night.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#popular" class="inline-flex items-center justify-center rounded-xl bg-emerald-400 px-5 py-3 font-bold text-slate-950 transition hover:bg-emerald-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300">Explore movies <span aria-hidden="true" class="ml-2">↘</span></a>
+            <a href="#about" class="inline-flex items-center justify-center rounded-xl border border-white/20 px-5 py-3 font-semibold text-white transition hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300">About ScreenShelf</a>
+          </div>
+          <dl class="mt-10 grid max-w-md grid-cols-3 gap-4 border-t border-white/10 pt-6">
+            <div><dt class="text-xs text-slate-400">Curated picks</dt><dd class="mt-1 text-2xl font-bold">24<span class="text-emerald-300">+</span></dd></div>
+            <div><dt class="text-xs text-slate-400">Genres</dt><dd class="mt-1 text-2xl font-bold">08</dd></div>
+            <div><dt class="text-xs text-slate-400">For your night</dt><dd class="mt-1 text-2xl font-bold">01<span class="text-emerald-300">.</span></dd></div>
+          </dl>
+        </div>
+        <aside class="feature-poster relative mx-auto w-full max-w-md" aria-label="Featured movie">
+          <div class="poster-art flex min-h-[360px] flex-col justify-between overflow-hidden rounded-3xl border border-white/15 p-6 shadow-2xl sm:min-h-[430px]">
+            <div class="flex items-start justify-between gap-3">
+              <span class="rounded-full bg-black/35 px-3 py-1 text-xs font-semibold backdrop-blur">FEATURED PICK</span>
+              <span class="rounded-full bg-emerald-300 px-3 py-1 text-xs font-bold text-slate-950">★ 9.1</span>
+            </div>
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-[.25em] text-emerald-200">Beyond the ordinary</p>
+              <h2 class="display-font mt-2 text-4xl font-bold sm:text-5xl">The Last<br>Horizon</h2>
+              <p class="mt-3 max-w-xs text-sm leading-6 text-slate-200">A quiet journey through a world that refuses to stand still.</p>
+            </div>
+          </div>
+          <p class="mt-3 text-center text-xs text-slate-400">Illustrative featured title for this demo layout.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="popular" aria-labelledby="popular-title" class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+      <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-[.18em] text-emerald-300">The collection</p>
+          <h2 id="popular-title" class="display-font mt-2 text-3xl font-bold sm:text-4xl">Popular this week</h2>
+          <p class="mt-2 max-w-xl text-slate-400">A small selection for your next watch. These demo cards show the layout and are not live movie listings.</p>
+        </div>
+        <a href="#watchlist" class="text-sm font-semibold text-emerald-300 underline decoration-emerald-300/40 underline-offset-4 hover:text-emerald-200">View watchlist section</a>
+      </div>
+
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="movie-card group">
+          <div class="movie-art art-one" role="img" aria-label="Abstract orange sunset over a distant desert landscape">
+            <span class="genre-pill">Adventure</span><span class="poster-mark" aria-hidden="true">01</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3"><h3 class="display-font text-xl font-bold">Desert Signal</h3><span class="shrink-0 text-sm font-semibold text-emerald-300">★ 8.7</span></div>
+            <p class="mt-2 text-sm leading-6 text-slate-400">A stranded explorer follows a mysterious signal beyond the dunes.</p>
+            <div class="mt-4 flex items-center justify-between border-t border-white/10 pt-4 text-xs text-slate-400"><span>2025 · 1h 58m</span><span>Adventure</span></div>
+          </div>
+        </article>
+
+        <article class="movie-card group">
+          <div class="movie-art art-two" role="img" aria-label="Abstract blue night sky with glowing geometric stars">
+            <span class="genre-pill">Sci-fi</span><span class="poster-mark" aria-hidden="true">02</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3"><h3 class="display-font text-xl font-bold">Neon Orbit</h3><span class="shrink-0 text-sm font-semibold text-emerald-300">★ 8.4</span></div>
+            <p class="mt-2 text-sm leading-6 text-slate-400">Two pilots discover a forgotten station at the edge of known space.</p>
+            <div class="mt-4 flex items-center justify-between border-t border-white/10 pt-4 text-xs text-slate-400"><span>2024 · 2h 06m</span><span>Sci-fi</span></div>
+          </div>
+        </article>
+
+        <article class="movie-card group">
+          <div class="movie-art art-three" role="img" aria-label="Abstract green forest silhouettes in early morning mist">
+            <span class="genre-pill">Mystery</span><span class="poster-mark" aria-hidden="true">03</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3"><h3 class="display-font text-xl font-bold">The Quiet Woods</h3><span class="shrink-0 text-sm font-semibold text-emerald-300">★ 8.9</span></div>
+            <p class="mt-2 text-sm leading-6 text-slate-400">A small town unravels its secrets after a strange summer storm.</p>
+            <div class="mt-4 flex items-center justify-between border-t border-white/10 pt-4 text-xs text-slate-400"><span>2025 · 1h 49m</span><span>Mystery</span></div>
+          </div>
+        </article>
+
+        <article class="movie-card group">
+          <div class="movie-art art-four" role="img" aria-label="Abstract violet and pink city lights reflected on wet streets">
+            <span class="genre-pill">Drama</span><span class="poster-mark" aria-hidden="true">04</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3"><h3 class="display-font text-xl font-bold">After the Rain</h3><span class="shrink-0 text-sm font-semibold text-emerald-300">★ 8.2</span></div>
+            <p class="mt-2 text-sm leading-6 text-slate-400">An unexpected reunion changes the course of three lives.</p>
+            <div class="mt-4 flex items-center justify-between border-t border-white/10 pt-4 text-xs text-slate-400"><span>2023 · 2h 01m</span><span>Drama</span></div>
+          </div>
+        </article>
+
+        <article class="movie-card group">
+          <div class="movie-art art-five" role="img" aria-label="Abstract golden sun above a calm ocean at dusk">
+            <span class="genre-pill">Romance</span><span class="poster-mark" aria-hidden="true">05</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3"><h3 class="display-font text-xl font-bold">Golden Hour</h3><span class="shrink-0 text-sm font-semibold text-emerald-300">★ 8.5</span></div>
+            <p class="mt-2 text-sm leading-6 text-slate-400">A summer friendship becomes a story neither expected to tell.</p>
+            <div class="mt-4 flex items-center justify-between border-t border-white/10 pt-4 text-xs text-slate-400"><span>2024 · 1h 52m</span><span>Romance</span></div>
+          </div>
+        </article>
+
+        <article class="movie-card group">
+          <div class="movie-art art-six" role="img" aria-label="Abstract red mountain peaks beneath a dramatic dark sky">
+            <span class="genre-pill">Action</span><span class="poster-mark" aria-hidden="true">06</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3"><h3 class="display-font text-xl font-bold">Redline</h3><span class="shrink-0 text-sm font-semibold text-emerald-300">★ 8.1</span></div>
+            <p class="mt-2 text-sm leading-6 text-slate-400">A daring rescue mission races against a fast-closing deadline.</p>
+            <div class="mt-4 flex items-center justify-between border-t border-white/10 pt-4 text-xs text-slate-400"><span>2025 · 1h 44m</span><span>Action</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="watchlist" aria-labelledby="watchlist-title" class="border-y border-white/10 bg-slate-900/70">
+      <div class="mx-auto flex max-w-7xl flex-col gap-5 px-4 py-12 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-[.18em] text-emerald-300">Save it for later</p>
+          <h2 id="watchlist-title" class="display-font mt-2 text-2xl font-bold sm:text-3xl">Your next movie night starts here.</h2>
+          <p class="mt-2 max-w-2xl text-slate-400">This is a static layout demo. Watchlist actions and search filtering are not connected to a backend.</p>
+        </div>
+        <a href="#popular" class="inline-flex shrink-0 items-center justify-center rounded-xl border border-emerald-300/50 px-5 py-3 font-semibold text-emerald-200 transition hover:bg-emerald-300/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300">Browse the collection</a>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-title" class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <h2 id="about-title" class="display-font text-xl font-bold">About this project</h2>
+      <p class="mt-2 max-w-3xl text-sm leading-6 text-slate-400">ScreenShelf is a demonstration of semantic HTML, responsive Tailwind CSS classes, visible keyboard focus, and accessible labels. Movie titles, ratings, and descriptions are fictional sample content.</p>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10">
+    <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+      <p>© 2026 ScreenShelf. Built as a frontend learning project.</p>
+      <a href="#home" class="font-semibold text-emerald-300 hover:text-emerald-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
